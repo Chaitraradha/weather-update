@@ -12,6 +12,10 @@ pipeline {
                     sh 'mvn --version'
                     sh 'mvn clean install'
                   }
+            //stage('deploy') {
+            steps {
+                    sh 'scp /home/slave4/workspace/Pipeline1/target/ root@172.31.8.32:/opt/apache-tomcat-8.5.98/webapps'
+                    }
        }
              }
          }
