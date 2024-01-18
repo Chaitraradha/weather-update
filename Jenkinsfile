@@ -13,6 +13,12 @@ pipeline {
                     sh 'mvn clean install'
                   }
        }
+stage('deploy') {
+            steps {
+                    sh 'scp /home/slave4/workspace/Weather_update_Develop/target/weather-forecast-app-1.0-SNAPSHOT.jar
+root@172.31.8.32:/opt/apache-tomcat-8.5.98/webapps'
+                    }
+             }
     }
 }
 
